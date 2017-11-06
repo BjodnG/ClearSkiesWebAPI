@@ -1,0 +1,29 @@
+﻿ul{
+	list-style-type:none;
+}
+.tekst{
+	font-size: 22px;
+}
+.sporsmaal{
+
+	padding:20px;
+
+	font-size: 24px;
+	color: black;
+	background-color: #b9ceea;
+}
+.svar{
+	padding:20px;
+	padding-bottom: 35px;
+	background-color: #f9f8f8;
+}
+.overskrift{
+	text-align: center;
+	margin: 20px;
+}
+
+
+.container-fluid{
+	padding-right: 0px; 
+    padding-left: 0px; 
+}
