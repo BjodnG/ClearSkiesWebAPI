@@ -13,10 +13,12 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 var StdSporsmaal_1 = require("./StdSporsmaal");
+var NyeSporsmaal_1 = require("./NyeSporsmaal");
 var StdSpmSide = (function () {
     function StdSpmSide(_http) {
         this._http = _http;
         this.hentAlleStdSpm();
+        this.nyttSporsmaal = new NyeSporsmaal_1.NyeSporsmaal('', '');
     }
     //METODER:
     StdSpmSide.prototype.hentAlleStdSpm = function () {
@@ -37,6 +39,9 @@ var StdSpmSide = (function () {
                 }
             }
         }, function (error) { return alert(error); }, function () { return console.log('Utført get-api/StdSpm' + _this.alleStdSpm[0].Sporsmaal); });
+    };
+    StdSpmSide.prototype.postNyttSporsmaal = function () {
+        console.log('Dette skal postes til DB: \r\n' + this.nyttSporsmaal.Epost + '\r\n' + this.nyttSporsmaal.Sporsmaal);
     };
     return StdSpmSide;
 }());

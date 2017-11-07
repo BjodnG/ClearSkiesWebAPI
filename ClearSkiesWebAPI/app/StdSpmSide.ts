@@ -17,11 +17,13 @@ export class StdSpmSide {
     public laster: string;
 
     public alleStdSpm: Array<StdSporsmaal>;
-    public nyttSporsmaal: Array<NyeSporsmaal>;
+    //public nyttSporsmaal: Array<NyeSporsmaal>;
+    public nyttSporsmaal: NyeSporsmaal;
 
     constructor(private _http: Http) {
 
         this.hentAlleStdSpm();
+        this.nyttSporsmaal = new NyeSporsmaal('', '');
     }
 
     //METODER:
@@ -54,7 +56,7 @@ export class StdSpmSide {
     }
 
     postNyttSporsmaal() {
-
+        console.log('Dette skal postes til DB: \r\n' + this.nyttSporsmaal.Epost + '\r\n' + this.nyttSporsmaal.Sporsmaal);
     }
 
 }

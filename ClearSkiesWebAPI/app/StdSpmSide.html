@@ -27,18 +27,20 @@
                 <div class="row">
                     <div class="col-md-3" ></div>
                     <div class="col-md-6 ">
-                        <form>
+                        <form #nyeSporsmaal="ngForm">
+
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Epostadresse</label>
-                                <input type="email" class="form-control"  placeholder="Skriv epost">
+                                <input [(ngModel)]="nyttSporsmaal.Epost" name="Epost" type="email" class="form-control"  placeholder="Skriv epost">
                                 <small  class="form-text text-muted">Skriv epostadressen som du ønsker å motta besvarelse til.</small>
                             </div>
+
                             <div class="form-group">
                                 <label >Spørsmål:</label>
-                                <textarea  class="form-control"  placeholder="Skriv ditt spørsmål."></textarea>
+                                <textarea [(ngModel)]="nyttSporsmaal.Sporsmaal" name="Sporsmaal"  class="form-control"  placeholder="Skriv ditt spørsmål."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Send melding</button>
+                            <button type="submit" (click)="postNyttSporsmaal()"  class="btn btn-primary">Send melding</button>
                         </form>
                     </div>
                 </div>

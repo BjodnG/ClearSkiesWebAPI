@@ -1,4 +1,4 @@
-﻿export class StdSporsmaal {
+﻿export class NyeSporsmaal {
 
     public Epost: string;
     public Sporsmaal: string;
