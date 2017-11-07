@@ -17,12 +17,17 @@ export class StdSpmSide {
     public laster: string;
 
     public alleStdSpm: Array<StdSporsmaal>;
-    //public nyttSporsmaal: Array<NyeSporsmaal>;
     public nyttSporsmaal: NyeSporsmaal;
+    public skjema: FormGroup;
+    //private EMAIL_REGEXP: string = "/^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/";
 
-    constructor(private _http: Http) {
+    constructor(private _http: Http, private fb: FormBuilder) {
 
         this.hentAlleStdSpm();
+        this.skjema = fb.group({
+            Epost: ['', Validators.email],
+            Sporsmaal: ['',Validators.required]
+        });
         this.nyttSporsmaal = new NyeSporsmaal('', '');
     }
 
@@ -56,7 +61,19 @@ export class StdSpmSide {
     }
 
     postNyttSporsmaal() {
+
+        console.log('Dette skal postes til DB: \r\n' + this.skjema.value.Epost + '\r\n' + this.skjema.value.Sporsmaal);
+        //this.nyttSporsmaal = new NyeSporsmaal(this.skjema.value.Epost, this.skjema.value.Sporsmaal);
+       
+        this.nyttSporsmaal.Epost = this.skjema.value.Epost;
+        this.nyttSporsmaal.Sporsmaal = this.skjema.value.Sporsmaal;
+        
+
+        this._http.post("api/StdSpm/", this.nyttSporsmaal)
+            .subscribe();
+
         console.log('Dette skal postes til DB: \r\n' + this.nyttSporsmaal.Epost + '\r\n' + this.nyttSporsmaal.Sporsmaal);
+        
     }
 
 }

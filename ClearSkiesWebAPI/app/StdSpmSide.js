@@ -12,12 +12,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
+var forms_1 = require("@angular/forms");
 var StdSporsmaal_1 = require("./StdSporsmaal");
 var NyeSporsmaal_1 = require("./NyeSporsmaal");
 var StdSpmSide = (function () {
-    function StdSpmSide(_http) {
+    //private EMAIL_REGEXP: string = "/^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/";
+    function StdSpmSide(_http, fb) {
         this._http = _http;
+        this.fb = fb;
         this.hentAlleStdSpm();
+        this.skjema = fb.group({
+            Epost: ['', forms_1.Validators.email],
+            Sporsmaal: ['', forms_1.Validators.required]
+        });
         this.nyttSporsmaal = new NyeSporsmaal_1.NyeSporsmaal('', '');
     }
     //METODER:
@@ -41,6 +48,12 @@ var StdSpmSide = (function () {
         }, function (error) { return alert(error); }, function () { return console.log('Utført get-api/StdSpm' + _this.alleStdSpm[0].Sporsmaal); });
     };
     StdSpmSide.prototype.postNyttSporsmaal = function () {
+        console.log('Dette skal postes til DB: \r\n' + this.skjema.value.Epost + '\r\n' + this.skjema.value.Sporsmaal);
+        //this.nyttSporsmaal = new NyeSporsmaal(this.skjema.value.Epost, this.skjema.value.Sporsmaal);
+        this.nyttSporsmaal.Epost = this.skjema.value.Epost;
+        this.nyttSporsmaal.Sporsmaal = this.skjema.value.Sporsmaal;
+        this._http.post("api/StdSpm/", this.nyttSporsmaal)
+            .subscribe();
         console.log('Dette skal postes til DB: \r\n' + this.nyttSporsmaal.Epost + '\r\n' + this.nyttSporsmaal.Sporsmaal);
     };
     return StdSpmSide;
@@ -51,7 +64,7 @@ StdSpmSide = __decorate([
         templateUrl: "./app/StdSpmSide.html"
         //template: "<h1>{{melding}}</h1>"
     }),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http, forms_1.FormBuilder])
 ], StdSpmSide);
 exports.StdSpmSide = StdSpmSide;
 //# sourceMappingURL=StdSpmSide.js.map

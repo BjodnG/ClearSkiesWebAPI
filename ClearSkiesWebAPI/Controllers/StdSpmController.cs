@@ -13,15 +13,16 @@ namespace ClearSkiesWebAPI.Controllers
 {
     public class StdSpmController : ApiController
     {
+        DbMetoder dbMetoder = new DbMetoder();
+
         public HttpResponseMessage Get()
         {
-            //??????????????
+
             var alleSporsmaal = new List<StandardSporsmaal>();
             using (var db = new SporsmaalDb())
             {
                 alleSporsmaal = db.StdSporsmaal.ToList();
             }
-            //???????????????
 
             var Json = new JavaScriptSerializer();
             string JsonString = Json.Serialize(alleSporsmaal);
@@ -35,7 +36,29 @@ namespace ClearSkiesWebAPI.Controllers
             };
         }
 
+        public HttpResponseMessage Post(NyttSporsmaal NyttSpm)
+        {
+            Debug.WriteLine("--------------------------- \n\r" + "Utenfor validering");
+            if (ModelState.IsValid)
+            {
+                Debug.WriteLine("--------------------------- \n\r" + "Innenfor validering");
+                bool ok = dbMetoder.leggTilNyttSporsmaal(NyttSpm);
+                if (ok)
+                {
+                    Debug.WriteLine("--------------------------- \n\r" + "Godkjent LeggTil.");
+                    return new HttpResponseMessage()
+                    {
+                        StatusCode = HttpStatusCode.OK
+                    };
+                }
 
+            }
+            return new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent("innsending av spørsmål feilet. Prøv igjen senere.")
+            };
+        }
 
     }
 }

@@ -21,8 +21,12 @@ namespace ClearSkiesWebAPI.Models
     {
         [Key]
         public int id { get; set; }
+
+        [Required(ErrorMessage = "Et spørsmål må oppgis")]
         public string Sporsmaal { get; set; }
-        
+
+        [Required(ErrorMessage = "Epost må oppgis")]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$", ErrorMessage = "Skriv inn gyldig epost-adresse")]
         public string Epost { get; set; }
     }
 
