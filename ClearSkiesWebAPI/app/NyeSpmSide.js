@@ -12,14 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
-var StdSporsmaal_1 = require("./StdSporsmaal");
+var NyeSporsmaal_1 = require("./NyeSporsmaal");
 var StdSpmSide = (function () {
     function StdSpmSide(_http) {
         this._http = _http;
-        this.hentAlleStdSpm();
+        //this.hentAlleNyeSpm();
     }
     //METODER:
-    StdSpmSide.prototype.hentAlleStdSpm = function () {
+    StdSpmSide.prototype.hentAlleNyeSpm = function () {
         var _this = this;
         this.laster = "Vennligst vent";
         this._http.get("api/StdSpm/")
@@ -28,15 +28,15 @@ var StdSpmSide = (function () {
             return JsonData;
         })
             .subscribe(function (JsonData) {
-            _this.alleStdSpm = [];
+            _this.alleNyeSpm = [];
             _this.laster = "";
             if (JsonData) {
                 for (var _i = 0, JsonData_1 = JsonData; _i < JsonData_1.length; _i++) {
                     var sporsmaal = JsonData_1[_i];
-                    _this.alleStdSpm.push(new StdSporsmaal_1.StdSporsmaal(sporsmaal.Sporsmaal, sporsmaal.Svar));
+                    _this.alleNyeSpm.push(new NyeSporsmaal_1.NyeSporsmaal(sporsmaal.Epost, sporsmaal.Sporsmaal));
                 }
             }
-        }, function (error) { return alert(error); }, function () { return console.log('Utført get-api/StdSpm' + _this.alleStdSpm[0].Sporsmaal); });
+        }, function (error) { return alert(error); }, function () { return console.log('Utført get-api/StdSpm' + _this.alleNyeSpm[0].Sporsmaal); });
     };
     return StdSpmSide;
 }());

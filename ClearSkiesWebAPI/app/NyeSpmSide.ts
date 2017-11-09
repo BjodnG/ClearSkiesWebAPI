@@ -2,7 +2,7 @@
 import { Http } from "@angular/http";
 import "rxjs/add/operator/map";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { StdSporsmaal } from './StdSporsmaal';
+import { NyeSporsmaal } from './NyeSporsmaal';
 
 
 @Component({
@@ -15,16 +15,16 @@ export class StdSpmSide {
 
     public laster: string;
 
-    public alleStdSpm: Array<StdSporsmaal>;
+    public alleNyeSpm: Array<NyeSporsmaal>;
 
     constructor(private _http: Http) {
 
-        this.hentAlleStdSpm();
+        //this.hentAlleNyeSpm();
     }
 
     //METODER:
 
-    hentAlleStdSpm() {
+    hentAlleNyeSpm() {
         this.laster = "Vennligst vent";
         this._http.get("api/StdSpm/")
             .map(resultat => {
@@ -33,21 +33,21 @@ export class StdSpmSide {
             })
             .subscribe(
             JsonData => {
-                this.alleStdSpm = [];
+                this.alleNyeSpm = [];
                 this.laster = "";
                 if (JsonData) {
                     for (let sporsmaal of JsonData) {
-                        this.alleStdSpm.push(
-                            new StdSporsmaal(
-                                sporsmaal.Sporsmaal,
-                                sporsmaal.Svar
+                        this.alleNyeSpm.push(
+                            new NyeSporsmaal(
+                                sporsmaal.Epost,
+                                sporsmaal.Sporsmaal
                             )
                         )
                     }
                 }
             },
             error => alert(error),
-            () => console.log('Utført get-api/StdSpm' + this.alleStdSpm[0].Sporsmaal )
+            () => console.log('Utført get-api/StdSpm' + this.alleNyeSpm[0].Sporsmaal )
             );
     }
 

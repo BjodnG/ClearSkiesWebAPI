@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\main.css" />
+    <Content Include="app\NyeSpmSide .html" />
     <Content Include="app\StdSpmSide.html" />
     <Content Include="App_Data\SporsmaalDatabase.mdf" />
     <Content Include="App_Data\SporsmaalDatabase_log.ldf">
