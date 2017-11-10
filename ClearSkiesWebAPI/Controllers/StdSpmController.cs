@@ -15,14 +15,12 @@ namespace ClearSkiesWebAPI.Controllers
     {
         DbMetoder dbMetoder = new DbMetoder();
 
-        public HttpResponseMessage Get()
+        [HttpGet]
+        [Route("api/StdSpm/StdSpmList")]
+        public HttpResponseMessage StdSpmList()
         {
 
-            var alleSporsmaal = new List<StandardSporsmaal>();
-            using (var db = new SporsmaalDb())
-            {
-                alleSporsmaal = db.StdSporsmaal.ToList();
-            }
+            var alleSporsmaal = dbMetoder.hentAlleStdSporsmaal();
 
             var Json = new JavaScriptSerializer();
             string JsonString = Json.Serialize(alleSporsmaal);
@@ -57,6 +55,25 @@ namespace ClearSkiesWebAPI.Controllers
             {
                 StatusCode = HttpStatusCode.NotFound,
                 Content = new StringContent("innsending av spørsmål feilet. Prøv igjen senere.")
+            };
+        }
+
+        [HttpGet]
+        [Route("api/StdSpm/NyeSpmList")]
+        public HttpResponseMessage NyeSpmList()
+        {
+
+            var alleSporsmaal = dbMetoder.hentAlleNyeSporsmaal();
+
+            var Json = new JavaScriptSerializer();
+            string JsonString = Json.Serialize(alleSporsmaal);
+
+            Debug.WriteLine("--------------------------- \n\r" + JsonString);
+
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent(JsonString, Encoding.UTF8, "application/json"),
+                StatusCode = HttpStatusCode.OK
             };
         }
 

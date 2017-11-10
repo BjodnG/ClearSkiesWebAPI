@@ -16,11 +16,11 @@ var forms_1 = require("@angular/forms");
 var StdSporsmaal_1 = require("./StdSporsmaal");
 var NyeSporsmaal_1 = require("./NyeSporsmaal");
 var StdSpmSide = (function () {
-    //private EMAIL_REGEXP: string = "/^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/";
     function StdSpmSide(_http, fb) {
         this._http = _http;
         this.fb = fb;
         this.hentAlleStdSpm();
+        this.hentAlleNyeSpm();
         this.skjema = fb.group({
             Epost: ['', forms_1.Validators.email],
             Sporsmaal: ['', forms_1.Validators.required]
@@ -31,7 +31,7 @@ var StdSpmSide = (function () {
     StdSpmSide.prototype.hentAlleStdSpm = function () {
         var _this = this;
         this.laster = "Vennligst vent";
-        this._http.get("api/StdSpm/")
+        this._http.get("api/StdSpm/StdSpmList")
             .map(function (resultat) {
             var JsonData = resultat.json();
             return JsonData;
@@ -55,6 +55,25 @@ var StdSpmSide = (function () {
         this._http.post("api/StdSpm/", this.nyttSporsmaal)
             .subscribe();
         console.log('Dette skal postes til DB: \r\n' + this.nyttSporsmaal.Epost + '\r\n' + this.nyttSporsmaal.Sporsmaal);
+    };
+    StdSpmSide.prototype.hentAlleNyeSpm = function () {
+        var _this = this;
+        this.laster = "Vennligst vent";
+        this._http.get("api/StdSpm/NyeSpmList")
+            .map(function (resultat) {
+            var JsonData = resultat.json();
+            return JsonData;
+        })
+            .subscribe(function (JsonData) {
+            _this.alleNyeSpm = [];
+            _this.laster = "";
+            if (JsonData) {
+                for (var _i = 0, JsonData_2 = JsonData; _i < JsonData_2.length; _i++) {
+                    var sporsmaal = JsonData_2[_i];
+                    _this.alleNyeSpm.push(new NyeSporsmaal_1.NyeSporsmaal(sporsmaal.Epost, sporsmaal.Sporsmaal));
+                }
+            }
+        }, function (error) { return alert(error); }, function () { return console.log('Utført get-api/StdSpm' + _this.alleNyeSpm[0].Sporsmaal); });
     };
     return StdSpmSide;
 }());

@@ -53,4 +53,24 @@
                 </div>
             </div>
         </div>
+        <div class="row" >
+            <div class="col-md-3" ></div>
+            <div class="col-md-6  col-xs-12">
+                <div class="row">
+                    <div class="overskrift">
+                        <h1>Innsendte spørsmål</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {{laster}}
+                    <div *ngFor="let NyeSpm of alleNyeSpm" class="tekst col-md-12">
+                        <!--Epost-->
+                        <div class="sporsmaal"><p>{{NyeSpm.Epost}}</p></div>
+                        <!--Spørsmål-->
+                        <div class="svar"><p>{{NyeSpm.Sporsmaal}}</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>

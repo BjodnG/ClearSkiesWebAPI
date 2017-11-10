@@ -8,9 +8,15 @@ namespace ClearSkiesWebAPI.Models
 {
     public class DbMetoder
     {
-        public bool hentAlleStdSporsmaal()
+        public List<StandardSporsmaal> hentAlleStdSporsmaal()
         {
-            return false;
+
+            var alleSporsmaal = new List<StandardSporsmaal>();
+            using (var db = new SporsmaalDb())
+            {
+                alleSporsmaal = db.StdSporsmaal.ToList();
+            }
+            return alleSporsmaal;
         }
 
         public bool leggTilNyttSporsmaal(NyttSporsmaal NyttSpm)
@@ -32,5 +38,14 @@ namespace ClearSkiesWebAPI.Models
             }
         }
 
+        public List<NyttSporsmaal> hentAlleNyeSporsmaal()
+        {
+            var alleSporsmaal = new List<NyttSporsmaal>();
+            using (var db = new SporsmaalDb())
+            {
+                alleSporsmaal = db.NyeSporsmaal.ToList();
+            }
+            return alleSporsmaal;
+        }
     }
 }

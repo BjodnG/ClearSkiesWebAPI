@@ -21,9 +21,13 @@ export class StdSpmSide {
     public skjema: FormGroup;
     //private EMAIL_REGEXP: string = "/^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/";
 
+    public alleNyeSpm: Array<NyeSporsmaal>;
+
     constructor(private _http: Http, private fb: FormBuilder) {
 
         this.hentAlleStdSpm();
+        this.hentAlleNyeSpm();
+
         this.skjema = fb.group({
             Epost: ['', Validators.email],
             Sporsmaal: ['',Validators.required]
@@ -35,7 +39,7 @@ export class StdSpmSide {
 
     hentAlleStdSpm() {
         this.laster = "Vennligst vent";
-        this._http.get("api/StdSpm/")
+        this._http.get("api/StdSpm/StdSpmList")
             .map(resultat => {
                 let JsonData = resultat.json();
                 return JsonData;
@@ -74,6 +78,33 @@ export class StdSpmSide {
 
         console.log('Dette skal postes til DB: \r\n' + this.nyttSporsmaal.Epost + '\r\n' + this.nyttSporsmaal.Sporsmaal);
         
+    }
+
+    hentAlleNyeSpm() {
+        this.laster = "Vennligst vent";
+        this._http.get("api/StdSpm/NyeSpmList")
+            .map(resultat => {
+                let JsonData = resultat.json();
+                return JsonData;
+            })
+            .subscribe(
+            JsonData => {
+                this.alleNyeSpm = [];
+                this.laster = "";
+                if (JsonData) {
+                    for (let sporsmaal of JsonData) {
+                        this.alleNyeSpm.push(
+                            new NyeSporsmaal(
+                                sporsmaal.Epost,
+                                sporsmaal.Sporsmaal
+                            )
+                        )
+                    }
+                }
+            },
+            error => alert(error),
+            () => console.log('Utført get-api/StdSpm' + this.alleNyeSpm[0].Sporsmaal)
+            );
     }
 
 }
