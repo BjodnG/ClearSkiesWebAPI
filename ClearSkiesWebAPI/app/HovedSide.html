@@ -1,0 +1,23 @@
+﻿<div class="container-fluid">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <img src="../img/CSA2-1.png" alt="company logo" width="40" height="40" style="float: left; margin: 5px;" />
+            <nav >
+                <a style="width:90px" (click)="byttComponent('NyeSpm')">AdminSide</a>
+                <a style="width:110px" (click)="byttComponent('StdSpm')">StandardSide</a>
+            </nav>
+            
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div *ngIf="ComponentSjekk('StdSpm')" >
+        <StdSpm></StdSpm>
+    </div>
+    <div *ngIf="ComponentSjekk('NyeSpm')">
+        <NyeSpm></NyeSpm>
+    </div>
+</div>

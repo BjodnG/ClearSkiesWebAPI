@@ -1,6 +1,18 @@
 ﻿ul{
 	list-style-type:none;
 }
+nav{
+	color: white;
+}
+a{
+	display: inline-block;
+	text-align: center;
+	margin-left: 10px;
+}
+a:hover{
+	font-weight: bold;
+}
+
 .tekst{
 	font-size: 22px;
 }

@@ -1,0 +1,35 @@
+﻿<div class="row">
+
+    <div class="col-md-6  col-xs-12">
+        <div class="row">
+            <div class="overskrift">
+                <h1>Relevante spørsmål</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            {{laster}}
+            <div *ngFor="let StdSpm of alleStdSpm" class="tekst col-md-12">
+                <!--Spørsmål-->
+                <div class="sporsmaal"><p>{{StdSpm.Sporsmaal}}</p></div>
+                <!--Svar-->
+                <div class="svar"><p>{{StdSpm.Svar}}</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xs-12">
+        <div class="row">
+            <div class="col-md-12 overskrift">
+                <h1>Flere spørsmål?</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 ">
+                <Skjema></Skjema>
+            </div>
+        </div>
+    </div>
+
+</div>

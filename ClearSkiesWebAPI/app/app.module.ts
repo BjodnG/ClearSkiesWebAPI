@@ -3,14 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { Ng2BootstrapModule } from 'ng2-bootstrap';
-//import { BootstrapGridModule } from 'ng2-bootstrap-grid';  BootstrapGridModule
+import { AppComponent } from './AppComponent';
+import { StdSpmComp } from './StdSpm.component';
+import { NyeSpmComp } from './NyeSpm.component';
+import { SkjemaComp } from './Skjema.component';
 
-import { StdSpmSide } from './StdSpmSide';
 @NgModule({
-    imports: [BrowserModule, HttpModule, JsonpModule, ReactiveFormsModule, Ng2BootstrapModule],
-    declarations: [StdSpmSide],
-    bootstrap: [StdSpmSide]
+    imports: [BrowserModule, HttpModule, JsonpModule, ReactiveFormsModule],
+    declarations: [AppComponent, StdSpmComp, NyeSpmComp, SkjemaComp],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 

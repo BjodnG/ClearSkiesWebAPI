@@ -1,0 +1,16 @@
+﻿<form [formGroup]='skjema' (ngSubmit)='postNyttSporsmaal()'>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Epostadresse</label>
+        <input formControlName="Epost" class="form-control" placeholder="Skriv epost">
+        <small *ngIf="this.skjema.controls.Epost.status=='INVALID'" class="form-text text-muted">Skriv inn gyldig epost-adresse</small>
+    </div>
+
+    <div class="form-group">
+        <label>Spørsmål:</label>
+        <textarea formControlName="Sporsmaal" class="form-control" placeholder="Skriv ditt spørsmål."></textarea>
+        <small *ngIf="this.skjema.controls.Sporsmaal.status=='INVALID'" class="form-text text-muted">Skriv et spørsmål.</small>
+    </div>
+
+    <button type="submit" [disabled]="!skjema.valid" class="btn btn-primary">Send melding</button>
+</form>

@@ -110,9 +110,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\HovedSide.html" />
     <Content Include="app\main.css" />
-    <Content Include="app\NyeSpmSide .html" />
-    <Content Include="app\StdSpmSide.html" />
+    <Content Include="app\NyeSpm.html" />
+    <Content Include="app\Skjema.html" />
+    <Content Include="app\StdSpm.html" />
     <Content Include="App_Data\SporsmaalDatabase.mdf" />
     <Content Include="App_Data\SporsmaalDatabase_log.ldf">
       <DependentUpon>SporsmaalDatabase.mdf</DependentUpon>
@@ -155,9 +157,11 @@
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
-    <TypeScriptCompile Include="app\NyeSpmSide.ts" />
+    <TypeScriptCompile Include="app\AppComponent.ts" />
+    <TypeScriptCompile Include="app\Skjema.component.ts" />
+    <TypeScriptCompile Include="app\NyeSpm.component.ts" />
     <TypeScriptCompile Include="app\NyeSporsmaal.ts" />
-    <TypeScriptCompile Include="app\StdSpmSide.ts" />
+    <TypeScriptCompile Include="app\StdSpm.component.ts" />
     <TypeScriptCompile Include="app\StdSporsmaal.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
