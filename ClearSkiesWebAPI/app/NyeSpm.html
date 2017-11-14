@@ -8,12 +8,24 @@
         </div>
 
         <div class="row">
-            {{laster}}
+            <div class="overskrift dbStatus" >
+                <p>{{laster}}{{ingenSpm}}</p>
+            </div>
+            
             <div *ngFor="let NyeSpm of alleNyeSpm" class="tekst col-md-12">
                 <!--Epost-->
-                <div class="sporsmaal"><p>{{NyeSpm.Epost}}</p></div>
+                <div class="sporsmaal row">
+                    <div class="col-md-10"><p>{{NyeSpm.Epost}}</p></div>
+                    <div class="col-md-2">
+                        <button (click)="slettNyttSporsmaal(NyeSpm.Id)" class="btn btn-danger btn-small delete">X</button>
+                    </div>
+                </div>
                 <!--Spørsmål-->
-                <div class="svar"><p>{{NyeSpm.Sporsmaal}}</p></div>
+                <div class="svar row">
+                    <div class="col-md-12">
+                        <p>{{NyeSpm.Sporsmaal}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

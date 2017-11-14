@@ -12,6 +12,9 @@ a{
 a:hover{
 	font-weight: bold;
 }
+p{
+	margin: 0px;
+}
 
 .tekst{
 	font-size: 22px;
@@ -22,18 +25,26 @@ a:hover{
 	padding-left: 5px;
 
 	font-size: 24px;
-	color: black;
-	background-color: #b9ceea;
+	color: white;
+	background-color: #5792f2 !important;
 }
 .svar{
 	padding:5px;
 	padding-left: 5px;
 	padding-bottom: 15px;
-	background-color: #f9f8f8;
+	margin-bottom: 15px;
+	background-color: #f2f2ff;
 }
 .overskrift{
 	text-align: center;
 	margin: 20px;
+}
+.dbStatus{
+	position: fixed;
+}
+.delete{
+	margin-left:60%;
+	display:block;
 }
 
 

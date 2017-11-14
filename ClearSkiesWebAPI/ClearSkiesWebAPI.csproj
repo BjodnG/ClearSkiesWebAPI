@@ -115,10 +115,6 @@
     <Content Include="app\NyeSpm.html" />
     <Content Include="app\Skjema.html" />
     <Content Include="app\StdSpm.html" />
-    <Content Include="App_Data\SporsmaalDatabase.mdf" />
-    <Content Include="App_Data\SporsmaalDatabase_log.ldf">
-      <DependentUpon>SporsmaalDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="bootstrap\css\bootstrap-responsive.css" />
     <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="bootstrap\css\bootstrap.css" />
@@ -127,6 +123,10 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="img\csa.ico" />
+    <Content Include="img\CSA2-1.png" />
+    <Content Include="img\CSA2-invert-blue-and-name.png" />
+    <Content Include="img\CSA2-invert-blue.png" />
     <Content Include="index.html" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
@@ -154,7 +154,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\AppComponent.ts" />

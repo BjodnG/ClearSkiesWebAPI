@@ -1,1 +1,1 @@
-{"version":3,"file":"NyeSporsmaal.js","sourceRoot":"","sources":["NyeSporsmaal.ts"],"names":[],"mappings":";;AAAA;IAKI,sBAAY,KAAa,EAAE,SAAiB;QACxC,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;QACnB,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;IAC/B,CAAC;IACL,mBAAC;AAAD,CAAC,AATD,IASC;AATY,oCAAY"}
+{"version":3,"file":"NyeSporsmaal.js","sourceRoot":"","sources":["NyeSporsmaal.ts"],"names":[],"mappings":";;AAAA;IAMI,sBAAY,EAAU,EAAE,KAAa,EAAE,SAAiB;QACpD,IAAI,CAAC,EAAE,GAAG,EAAE,CAAC;QACb,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;QACnB,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;IAC/B,CAAC;IACL,mBAAC;AAAD,CAAC,AAXD,IAWC;AAXY,oCAAY"}

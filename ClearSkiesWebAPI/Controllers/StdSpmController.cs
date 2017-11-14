@@ -65,6 +65,8 @@ namespace ClearSkiesWebAPI.Controllers
 
             var alleSporsmaal = dbMetoder.hentAlleNyeSporsmaal();
 
+            //Debug.WriteLine("------------SEHER--------------- \n\r" + alleSporsmaal[0].id);
+
             var Json = new JavaScriptSerializer();
             string JsonString = Json.Serialize(alleSporsmaal);
 
@@ -74,6 +76,24 @@ namespace ClearSkiesWebAPI.Controllers
             {
                 Content = new StringContent(JsonString, Encoding.UTF8, "application/json"),
                 StatusCode = HttpStatusCode.OK
+            };
+        }
+
+        public HttpResponseMessage delete(int id)
+        {
+            bool ok = dbMetoder.slettNyeSpm(id);
+            if (ok)
+            {
+                Debug.WriteLine("--------------------------- \n\r" + "Slettet spørsmål.");
+                return new HttpResponseMessage()
+                {
+                    StatusCode = HttpStatusCode.OK
+                };
+            }
+            return new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent("Feil i DB. Sletting av spørsmål feilet.")
             };
         }
 

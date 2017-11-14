@@ -3,7 +3,7 @@
     <div class="col-md-6  col-xs-12">
         <div class="row">
             <div class="overskrift">
-                <h1>Relevante spørsmål</h1>
+                <h1>FAQ</h1>
             </div>
         </div>
 
@@ -11,9 +11,13 @@
             {{laster}}
             <div *ngFor="let StdSpm of alleStdSpm" class="tekst col-md-12">
                 <!--Spørsmål-->
-                <div class="sporsmaal"><p>{{StdSpm.Sporsmaal}}</p></div>
+                <div class="row sporsmaal">
+                    <div class="col-md-12"><p>{{StdSpm.Sporsmaal}}</p></div>
+                </div>
                 <!--Svar-->
-                <div class="svar"><p>{{StdSpm.Svar}}</p></div>
+                <div class="row svar">
+                    <div class="col-md-12"><p>{{StdSpm.Svar}}</p></div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,9 +1,3 @@
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.IO.Compression.dll
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\VBCSCompiler.exe
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\csc.exe
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\csc.exe.config
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\csc.rsp
@@ -11,9 +5,13 @@ C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\csi.exe
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\csi.exe.config
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\csi.rsp
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -23,6 +21,7 @@ C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.IO.Compression.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -45,7 +44,11 @@ C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\System.
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\vbc.exe
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\vbc.exe.config
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\vbc.rsp
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\VBCSCompiler.exe
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\ClearSkiesWebAPI.dll.config
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\ClearSkiesWebAPI.dll
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\ClearSkiesWebAPI.pdb
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\EntityFramework.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\EntityFramework.SqlServer.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -73,10 +76,7 @@ C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\Newtonsoft.Jso
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\System.Net.Http.Formatting.xml
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\System.Web.Http.xml
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\System.Web.Http.WebHost.xml
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\obj\Debug\ClearSkiesWebAPI.csprojResolveAssemblyReference.cache
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\obj\Debug\ClearSkiesWebAPI.csproj.CoreCompileInputs.cache
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\obj\Debug\ClearSkiesWebAPI.dll
 C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\obj\Debug\ClearSkiesWebAPI.pdb
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\ClearSkiesWebAPI.dll.config
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\ClearSkiesWebAPI.dll
-C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\bin\ClearSkiesWebAPI.pdb
+C:\Users\bjorn\source\repos\ClearSkiesWebAPI\ClearSkiesWebAPI\obj\Debug\ClearSkiesWebAPI.csprojResolveAssemblyReference.cache

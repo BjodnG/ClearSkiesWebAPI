@@ -47,5 +47,25 @@ namespace ClearSkiesWebAPI.Models
             }
             return alleSporsmaal;
         }
+
+        public bool slettNyeSpm(int id)
+        {
+            try
+            {
+                using (var db = new SporsmaalDb())
+                {
+                    var slettSpm = db.NyeSporsmaal.Find(id);
+                    db.NyeSporsmaal.Remove(slettSpm);
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception error)
+            {
+                Debug.WriteLine("-------------------- \n\r" + error);
+                return false;
+            }
+        }
+
     }
 }

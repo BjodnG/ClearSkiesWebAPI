@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -37,7 +38,15 @@ namespace ClearSkiesWebAPI.Models
     {
         public SporsmaalDb() : base("name=Sporsmaal")
         {
-            Database.CreateIfNotExists();
+            //Database.CreateIfNotExists();
+
+            if (!Database.Exists())
+            {
+                Database.Create();
+                this.Seed(this);
+            }
+            Debug.WriteLine("------------------ \r\n" + Database.Exists());
+
         }
 
         public DbSet<StandardSporsmaal> StdSporsmaal { get; set; }
@@ -47,5 +56,31 @@ namespace ClearSkiesWebAPI.Models
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public void Seed(SporsmaalDb context)
+        {
+            var spørsmål = new List<StandardSporsmaal>
+                         {
+                              new StandardSporsmaal
+                              {
+                                      Sporsmaal = "Hvor sent kan jeg sjekke inn?",
+                                      Svar = "Senest en time før avreise."
+                              },
+                              new StandardSporsmaal
+                              {
+                                      Sporsmaal = "Hvor mye koster ekstra bagasje?",
+                                      Svar = "Ekstra bagasje koster 500kr"
+                              },
+                              new StandardSporsmaal
+                              {
+                                      Sporsmaal = "Hva er fristen for å avbestille billetter",
+                                      Svar = "24 timer før avreise."
+                              }
+                         };
+
+            spørsmål.ForEach(r => context.StdSporsmaal.Add(r));
+            context.SaveChanges();
+        }
+
     }
 }

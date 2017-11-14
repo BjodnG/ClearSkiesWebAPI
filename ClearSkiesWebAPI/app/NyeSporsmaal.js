@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var NyeSporsmaal = (function () {
-    function NyeSporsmaal(Epost, Sporsmaal) {
+    function NyeSporsmaal(Id, Epost, Sporsmaal) {
+        this.Id = Id;
         this.Epost = Epost;
         this.Sporsmaal = Sporsmaal;
     }

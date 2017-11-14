@@ -30,13 +30,27 @@ var NyeSpmComp = (function () {
             .subscribe(function (JsonData) {
             _this.alleNyeSpm = [];
             _this.laster = "";
+            //console.log(JsonData);
             if (JsonData) {
                 for (var _i = 0, JsonData_1 = JsonData; _i < JsonData_1.length; _i++) {
                     var sporsmaal = JsonData_1[_i];
-                    _this.alleNyeSpm.push(new NyeSporsmaal_1.NyeSporsmaal(sporsmaal.Epost, sporsmaal.Sporsmaal));
+                    _this.alleNyeSpm.unshift(new NyeSporsmaal_1.NyeSporsmaal(sporsmaal.id, sporsmaal.Epost, sporsmaal.Sporsmaal));
                 }
+                console.log(_this.alleNyeSpm.length);
+                if (_this.alleNyeSpm.length == 0)
+                    _this.ingenSpm = 'Ingen spørsmål i DB.';
+                else
+                    _this.ingenSpm = '';
             }
-        }, function (error) { return alert(error); }, function () { return console.log('Utført get-api/StdSpm' + _this.alleNyeSpm[0].Sporsmaal); });
+        }, function (error) { return alert(error); }, function () { return console.log('Utført get-api/StdSpm'); });
+    };
+    NyeSpmComp.prototype.slettNyttSporsmaal = function (id) {
+        var _this = this;
+        this._http.delete("api/StdSpm/" + id)
+            .map(function (returData) { return returData.toString(); })
+            .subscribe(function (retur) {
+            _this.hentAlleNyeSpm();
+        }, function (error) { return alert(error + "SLETTING FEILET"); }, function () { return console.log("Sletting utført."); });
     };
     return NyeSpmComp;
 }());
